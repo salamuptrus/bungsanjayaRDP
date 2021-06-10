@@ -1,16 +1,17 @@
 name: FreeRDP
+
 on: workflow_dispatch
+
 jobs:
   build:
+
     runs-on: windows-latest
     timeout-minutes: 9999
+
     steps:
     - name: Mendownload Ngrok.
       run: |
         Invoke-WebRequest https://bin.equinox.io/c/4VmDzA7iaHb/ngrok-stable-windows-amd64.zip -OutFile ngrok.zip
-        Invoke-WebRequest https://github.com/bungsanjaya/bungsanjayaRDP/main/start.bat -OutFile start.bat
-        Invoke-WebRequest https://github.com/bungsanjaya/bungsanjayaRDP/main/wallpaper.png -OutFile wallpaper.bmp
-        Invoke-WebRequest https://raw.githubusercontent.com/bungsanjaya/bungsanjayaRDP/main/wallpaper.bat -OutFile wallpaper.bat
         Invoke-WebRequest https://github.com/bungsanjaya/bungsanjayaRDP/main/start.bat -OutFile start.bat
         Invoke-WebRequest https://github.com/bungsanjaya/bungsanjayaRDP/main/wallpaper.png -OutFile wallpaper.bmp
         Invoke-WebRequest https://github.com/bungsanjaya/bungsanjayaRDP/main/wallpaper.bat -OutFile wallpaper.bat
@@ -33,6 +34,5 @@ jobs:
       run: cmd /c start.bat
     - name: Berhasil Dibuat! Anda Bisa Menutup Tab Sekarang.
       run: | 
-        Invoke-WebRequest https://github.com/bungsanjaya/bungsanjayaRDP/raw/main/loop.ps1 -OutFile loop.ps1
         Invoke-WebRequest https://github.com/bungsanjaya/bungsanjayaRDP/raw/main/loop.ps1 -OutFile loop.ps1
         ./loop.ps1
